@@ -6,13 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="test-btn" id="test-btn">Test</button>
+    <div class="container">
+        
+        <div class="header">
+            <h1 class="pp">Donavelli</h1>
+            <button class="home">Home</button>
+            <button class="documents"><Strong>Documents</Strong></button>
+        </div>
+
+        <div class="main" id="main">
+            <button class="File1">File 1</button>
+            <input <input 
+            type="file"
+            id="photo" 
+            name="photo"
+            accept="image/*">>
+        </div>
+
+
+    </div>
 
     <script>
-        let test = document.getElementById("test-btn");
-    </script>
+        let documentsButton = document.querySelector('.documents');
+        let main = document.querySelector('#main');
+      
+        documentsButton.addEventListener('click', function() {
+          main.style.display = (main.style.display === 'none') ? 'block' : 'none';
+        });
+      </script>
 </body>
 </html>
