@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#062e3f">
+    <meta name="Description" content="A dynamic and aesthetic To-Do List WebApp.">
+
+    <!-- Google Font: Quick Sand -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- font awesome (https://fontawesome.com) for basic icons; source: https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/corner.css">
+    <link rel="stylesheet" href="CSS/styleHeader.css" />
+    <link rel="stylesheet" href="CSS/header-1.css" />
+    <title>DONAVELLI</title>
+
+    <style>
+      body *:hover{cursor: url('https://raw.githubusercontent.com/coob113/fancy-cursors/master/mini1.png') 64 64, auto !important;}
+      a {cursor: url('https://raw.githubusercontent.com/coob113/fancy-cursors/master/mini2.png') 64 64, auto !important;}
+
+      
+      </style>
+</head>
+
+<header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <a href="#" class="brand">D.O.N</a>
+        <nav class="nav">
+          <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+          </button>
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a href="index.html">Home</a></li>
+            <li class="nav__item"><a href="about.html">About</a></li>
+            <li class="nav__item"><a href="services.html">Services</a></li>
+            <li class="nav__item"><a href="creators.html">Creators</a></li>
+            <li class="nav__item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    
+<body>
+    <div id = "header">
+       
+        
+        <h1 id="title">Supporting <span id="changingWord"></span><div id="border"></div></h1>
+     
+    </div>
+
+  
+    <script src="JS/main.js" type="text/javascript"> </script>
+</body>
+</html>
+
+<script>
+    // JavaScript code for changing the word dynamically
+    const changingWord = document.getElementById('changingWord');
+    const words = ['Creators.', 'You.'];
+    let index = 0;
+
+    function changeWord() {
+        changingWord.textContent = words[index];
+        index = (index + 1) % words.length;
+    }
+    changeWord();
+    setTimeout(changeWord, 7000); // Change word every 2 seconds
+</script>
+
+<script src="JS/header-1.js"></script>
+
+<style>
+  .standard-theme {
+    width: 100%;
+  height: 100vh; /* Adjust as needed */
+  background: linear-gradient(135deg, #062e3f, #243c48, #062e3f );
+  background-size: 400% 400%;
+    animation: gradientShift 7s linear infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+      background-position: 0% 50%; /* Start position */
+    }
+    100% {
+      background-position: 100% 50%; /* End position */
+    }
+  }
+</style>
+
+<style>
+  /* Add this CSS for the combined fade-in and slide-in animation */
+  @keyframes fadeSlideIn {
+      0% {
+          opacity: 0;
+          
+      }
+      100% {
+          opacity: 1;
+          
+      }
+  }
+
+  .brand, .nav__item {
+      /* Apply the animation to the brand element */
+      animation: fadeSlideIn 1s ease forwards;
+  }
+</style>
+
